@@ -23,3 +23,11 @@ cd api
 ```
 
 * Acesso web à API: http://localhost:8080/
+
+### Servidor web da aplicação
+
+```
+cd cdc-admin
+npm start
+```
+* Acesso web: http://localhost:3000

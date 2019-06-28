@@ -1,3 +1,8 @@
 .idea
+
+#banco
 !db/mysql/.gitkeep
 db/mysql/*
+
+#cdc
+cdc-admin/node_modules

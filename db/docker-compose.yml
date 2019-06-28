@@ -1,0 +1,24 @@
+version: '2'
+services:
+    cdc-mysql:
+        image: mysql:5.7.26
+        restart: always
+        container_name: cdc-mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=8BRvEPhWHLE
+        volumes:
+            - ./mysql:/var/lib/mysql
+        ports:
+            - 3306:3306
+    payfast-phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        restart: always
+        container_name: cdc-phpmyadmin
+        ports:
+            - "8085:80"
+        environment:
+            - PMA_HOST=cdc-mysql
+        links:
+            - cdc-mysql
+        depends_on:
+          - cdc-mysql

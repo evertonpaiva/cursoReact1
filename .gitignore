@@ -1,0 +1,3 @@
+.idea
+!db/mysql/.gitkeep
+db/mysql/*

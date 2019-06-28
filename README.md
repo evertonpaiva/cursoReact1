@@ -6,10 +6,20 @@ Repositório do curso de React parte 1, oferecido pela Alura.
 
 
 ### Iniciar banco
+Para iniciar a stack do banco de dados local via docker
+```
+cd db
+./inicia-banco.sh
+```
 
+* Acesso ao PHPMyadmin: http://localhost:8085/
+* Acesso ao Mysql: localhost:3306
 
 ### Iniciar API
+Para iniciar a API localmente
 ```
 cd api
-java -jar jar-cdc-react.jar -Dspring.datasource.password=8BRvEPhWHLE
+./inicia-api.sh
 ```
+
+* Acesso web à API: http://localhost:8080/

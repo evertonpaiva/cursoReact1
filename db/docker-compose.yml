@@ -5,7 +5,7 @@ services:
         restart: always
         container_name: cdc-mysql
         environment:
-            - MYSQL_ROOT_PASSWORD=8BRvEPhWHLE
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
         volumes:
             - ./mysql:/var/lib/mysql
         ports:

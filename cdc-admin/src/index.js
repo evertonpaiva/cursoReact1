@@ -1,19 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './Home';
-import AutorBox from './Autor';
-import LivroBox from './Livro';
+import AutorAdmin from './Autor';
+import LivroAdmin from './Livro';
 import './index.css';
 
 ReactDOM.render(
-  (<Router history={browserHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="/autor" component={AutorBox} />
-      <Route path="/livro" component={LivroBox} />
-    </Route>
+  (<Router>
+    <App>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/autor" component={AutorAdmin}/>
+        <Route path="/livro" component={LivroAdmin}/>
+      </Switch>
+    </App>
   </Router>),
   document.getElementById('root')
 );

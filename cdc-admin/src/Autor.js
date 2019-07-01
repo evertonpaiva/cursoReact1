@@ -105,7 +105,7 @@ class TabelaAutores extends Component {
   }
 }
 
-export default class AutorBox extends Component {
+export default class AutorAdmin extends Component {
   constructor() {
     super();
     this.state = {lista: []};

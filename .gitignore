@@ -6,3 +6,4 @@ db/mysql/*
 
 #cdc
 cdc-admin/node_modules
+cdc-admin/package-lock.json

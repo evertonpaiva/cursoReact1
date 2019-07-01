@@ -1,11 +1,30 @@
 import React, { Component } from 'react';
 import './css/pure-min.css';
 import './css/side-menu.css';
+import $ from 'jquery';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {lista: []};
+  }
+
+  componentDidMount() {
+    $.ajax({
+        url:"http://localhost:8080/api/autores",
+        dataType: 'json',
+        success:function(resposta){
+          this.setState({lista:resposta});
+        }.bind(this)
+      }
+    );
+  }
+
   render() {
     return (
       <div id="layout">
+
         <a href="#menu" id="menuLink" className="menu-link">
           <span></span>
         </a>
@@ -29,6 +48,7 @@ class App extends Component {
 
           <div className="content" id="content">
             <div className="pure-form pure-form-aligned">
+
               <form className="pure-form pure-form-aligned">
                 <div className="pure-control-group">
                   <label htmlFor="nome">Nome</label>
@@ -47,24 +67,34 @@ class App extends Component {
                   <button type="submit" className="pure-button pure-button-primary">Gravar</button>
                 </div>
               </form>
+
             </div>
+
             <div>
               <table className="pure-table">
                 <thead>
                   <tr>
                     <th>Nome</th>
-                  <th>email</th>
-                </tr>
+                    <th>email</th>
+                  </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Alberto</td>
-                    <td>alberto.souza@caelum.com.br</td>
-                  </tr>
+                  {
+                    this.state.lista.map((autor) => {
+                      return (
+                        <tr key={autor.id}>
+                          <td>{autor.nome}</td>
+                          <td>{autor.email}</td>
+                        </tr>
+                      );
+                    })
+                  }
                 </tbody>
               </table>
             </div>
+
           </div>
+
         </div>
       </div>
     );

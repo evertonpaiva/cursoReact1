@@ -39,7 +39,7 @@ class FormularioLivro extends Component {
       dataType: 'json',
       type: 'POST',
       data: JSON.stringify({titulo:titulo,preco:preco,autorId:autorId}),
-      success: function(novaListagem) {
+      success: (novaListagem) => {
         PubSub.publish( 'atualiza-lista-livros',novaListagem);
         this.setState({titulo:'',preco:'',autorId:''});
       },

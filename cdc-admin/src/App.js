@@ -38,10 +38,10 @@ class App extends Component {
         email: this.state.email,
         senha: this.state.senha
       }),
-      success: (resposta) => {
-        console.log("enviado com sucesso")
-      },
-      error: (resposta) => {
+      success: function(resposta) {
+        this.setState({lista:resposta});
+      }.bind(this),
+      error: function(resposta) {
         console.log("erro")
       }
     });

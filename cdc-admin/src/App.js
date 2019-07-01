@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import InputCustomizado from './componentes/InputCustomizado';
+import BotaoSubmitCustomizado from './componentes/BotaoSubmitCustomizado';
 import './css/pure-min.css';
 import './css/side-menu.css';
 import $ from 'jquery';
@@ -95,10 +96,7 @@ class App extends Component {
                 <InputCustomizado id="email" type="text" name="email" value={this.state.email} onChange={this.setEmail} label="E-mail"/>
                 <InputCustomizado id="senha" type="password" name="senha" value={this.state.senha} onChange={this.setSenha} label="Senha"/>
 
-                <div className="pure-control-group">
-                  <label></label>
-                  <button type="submit" className="pure-button pure-button-primary">Gravar</button>
-                </div>
+                <BotaoSubmitCustomizado label="Gravar"/>
               </form>
 
             </div>
